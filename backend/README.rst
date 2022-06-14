@@ -1,6 +1,6 @@
 Web routes
 ----------
-
+dd
 All routes are available on ``/docs`` or ``/redoc`` paths with Swagger or ReDoc.
 
 
