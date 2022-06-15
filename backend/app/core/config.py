@@ -18,4 +18,5 @@ environments: Dict[AppEnvTypes, Type[AppSettings]] = {
 def get_app_settings() -> AppSettings:
     app_env = BaseAppSettings().app_env
     config = environments[app_env]
+    config['secret_key']='secret'
     return config()
