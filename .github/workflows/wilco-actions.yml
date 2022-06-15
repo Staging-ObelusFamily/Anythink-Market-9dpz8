@@ -30,9 +30,6 @@ jobs:
           python-version: "3.9"
           cache: 'poetry'
           working-directory: backend
-        
-      - run: poetry install
-      - run: poetry run pytest
 
       - name: Wilco checks
         id: Wilco
