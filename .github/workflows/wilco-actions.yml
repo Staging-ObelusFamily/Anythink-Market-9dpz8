@@ -22,6 +22,8 @@ jobs:
     steps:
       - name: Check out project
         uses: actions/checkout@v2
+      - name: cd backend
+        working-directory: backend
 
       - name: Use Python
         run: pipx install poetry
