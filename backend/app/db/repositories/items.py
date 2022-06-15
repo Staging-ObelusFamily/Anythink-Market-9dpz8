@@ -245,15 +245,15 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
     ) -> Item:
         item_row = await queries.get_item_by_slug(self.connection, slug=slug)
         if item_row:
-            return await self._get_item_from_db_record(
+            item = await self._get_item_from_db_record(
                 item_row=item_row,
                 slug=item_row[SLUG_ALIAS],
                 seller_username=item_row[SELLER_USERNAME_ALIAS],
                 requested_user=requested_user,
             )
-            # if not item.image:
-            #     item.image = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'
-            # return item
+            if not item.image:
+                item.image = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'
+            return item
 
         raise EntityDoesNotExist("item with slug {0} does not exist".format(slug))
 
