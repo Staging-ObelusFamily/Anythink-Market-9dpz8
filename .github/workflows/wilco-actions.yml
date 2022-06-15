@@ -29,7 +29,6 @@ jobs:
         with:
           python-version: "3.9"
           cache: 'poetry'
-          working-directory: backend
 
       - name: Wilco checks
         id: Wilco
