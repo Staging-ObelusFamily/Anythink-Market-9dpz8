@@ -251,8 +251,8 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
                 seller_username=item_row[SELLER_USERNAME_ALIAS],
                 requested_user=requested_user,
             )
-            if not item.image:
-                item.image = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'
+            # if not item.image:
+            #     item.image = 'https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png'
             return item
 
         raise EntityDoesNotExist("item with slug {0} does not exist".format(slug))
